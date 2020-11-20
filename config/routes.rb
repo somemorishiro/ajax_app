@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   
   post 'posts', to: 'posts#create'
   #URLpostsへcreateの結果を送信する
+  get 'posts/:id', to: 'posts#checked'
 end
