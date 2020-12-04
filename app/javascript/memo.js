@@ -11,16 +11,16 @@ function memo() {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
       }
-      const item = XHR.response.post;
+      const items = XHR.response.post;
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
       const HTML = `
-        <div class="post" data-id=${item.id}>
+        <div class="post" data-id=${items.id}>
           <div class="post-date">
-            投稿日時：${item.created_at}
+            投稿日時：${items.created_at}
           </div>
           <div class="post-content">
-          ${item.content}
+          ${items.content}
           </div>
         </div>`;
       list.insertAdjacentHTML("afterend", HTML);

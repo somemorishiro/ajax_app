@@ -13,7 +13,7 @@ function check() {
       // Ajaxに必要なオブジェクトを生成している
       const XHR = new XMLHttpRequest();
       // openでリクエストを初期化する
-      XHR.open("GET", `/posts/${postId}`, true);
+      XHR.open("GET", `/post/${postId}`, true);
       // レスポンスのタイプを指定する
       XHR.responseType = "json";
       // sendでリクエストを送信する
@@ -30,10 +30,10 @@ function check() {
         const item = XHR.response.post;
         if (item.checked === true) {
           // 既読状態であれば、灰色に変わるcssを適用するためのカスタムデータを追加している
-          post.setAttribute("data-check", "true");
+          item.setAttribute("data-check", "true");
         } else if (item.checked === false) {
           // 未読状態であれば、カスタムデータを削除している
-          post.removeAttribute("data-check");
+          item.removeAttribute("data-check");
         }
       };
     });
